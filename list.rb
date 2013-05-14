@@ -1,3 +1,5 @@
+require_relative "task.rb"
+
 class List
   attr_reader :title, :tasks
  
