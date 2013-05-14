@@ -43,36 +43,36 @@ describe Cookie do
  
   describe "#status" do
     it "returns the cookie's current status" do
-      expect(cookie.status).to eq(:doughy)
+      cookie.status.should eq(:doughy)
     end
  
     context "when unbaked" do
       it "is `:doughy`" do 
-        expect(cookie.status).to eq(:doughy)
+        cookie.status.should eq(:doughy)
       end 
     end
  
     context "when baked for less than 7 minutes" do
       it "is `:doughy`" do
-        expect(cookie.bake!(6).status).to eq(:doughy)
+        cookie.bake!(6).status.should eq(:doughy)
       end
     end  
  
     context "when baked for at least 7 but less than 10 minutes" do
       it "is `:almost_ready`" do
-        expect(cookie.bake!(9).status).to eq(:almost_ready)
+        cookie.bake!(9).status.should eq(:almost_ready)
       end
     end
  
     context "when baked for at least 10 but less than 12 minutes" do
       it "is `:ready`" do
-        expect(cookie.bake!(11).status).to eq(:ready)
+        cookie.bake!(11).status.should eq(:ready)
       end
     end
  
     context "when baked for at least 12 minutes" do
       it "is `:burned`" do
-        expect(cookie.bake!(12).status).to eq(:burned)
+        cookie.bake!(12).status.should eq(:burned)
       end
     end
   end
